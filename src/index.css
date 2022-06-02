@@ -3,3 +3,7 @@
 @tailwind utilities;
 
 /* Colors A07265 - brown , 3F3D56 - gray*/
+
+.Toastify__toast {
+  text-transform: capitalize;
+}

@@ -1,6 +1,10 @@
 import { useState, useEffect } from "react";
 import { Logo, FormRow } from "./../components";
 import { AiOutlineMail, AiOutlineLock, AiOutlineUser } from "react-icons/ai";
+import { toast } from "react-toastify";
+import { useDispatch, useSelector } from "react-redux";
+import { loginUser, registerUser } from "../features/user/userSlice";
+import { useNavigate } from "react-router-dom";
 
 const initialState = {
   name: "",
@@ -11,6 +15,9 @@ const initialState = {
 
 function Register() {
   const [values, setValues] = useState(initialState);
+  const { user, isLoading } = useSelector((store) => store.user);
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     const name = e.target.name;
@@ -22,13 +29,27 @@ function Register() {
     e.preventDefault();
     const { isMember, name, email, password } = values;
     if (!email || !password || (!isMember && !name)) {
-      console.log("Please fill out all fields");
+      toast.error("Please fill out all fields");
+      return;
     }
+    if (isMember) {
+      dispatch(loginUser({ email: email, password: password }));
+      return;
+    }
+    dispatch(registerUser({ name, email, password }));
   };
 
   const toggleMember = () => {
     setValues({ ...values, isMember: !values.isMember });
   };
+
+  useEffect(() => {
+    if (user) {
+      setTimeout(() => {
+        navigate("/");
+      }, 2000);
+    }
+  }, [user]);
 
   return (
     <div className="bg-gray-200 h-screen flex items-center justify-center">
@@ -74,13 +95,16 @@ function Register() {
         <button
           type="submit"
           className="relative inline-block px-6 py-3 font-bold text-[#2F2E41] group mt-8"
+          disabled={isLoading}
         >
           <span
             className="absolute inset-0 w-full h-full transition duration-300 ease-out transform -translate-x-2 -translate-y-2
              bg-[#A07265] group-hover:translate-x-0 group-hover:translate-y-0"
           ></span>
           <span className="absolute inset-0 w-full h-full border-4 border-[#2F2E41]"></span>
-          <span className="relative">Submit</span>
+          <span className="relative">
+            {isLoading ? "Loading..." : "Submit"}
+          </span>
         </button>
         <p className="text-gray-800 mt-5">
           {values.isMember ? "Not a member yet? " : "Already a member? "}
