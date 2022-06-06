@@ -7,3 +7,32 @@
 .Toastify__toast {
   text-transform: capitalize;
 }
+
+@layer components {
+  .dropdown {
+    @apply absolute top-10 left-0 w-full bg-gray-200 shadow-md p-2 text-center rounded-lg invisible;
+  }
+
+  .show-dropdown {
+    @apply visible;
+  }
+
+  .sidebar-container {
+    @apply fixed inset-0 flex items-center  -z-10 opacity-0 transition-all;
+  }
+
+  .sidebar-container-big {
+    @apply bg-white min-h-screen h-full w-[250px] ml-[-250px] transition-all;
+  }
+
+  .show-sidebar {
+    @apply opacity-100 z-10;
+  }
+  .show-sidebar-big {
+    @apply ml-0;
+  }
+
+  .nav-link {
+    @apply text-[#3F3D56] pl-10 hover:pl-14 ease-in-out duration-300 flex items-center capitalize text-lg  py-3 hover:text-[#A07265] hover:bg-gray-100;
+  }
+}
