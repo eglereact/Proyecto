@@ -14,7 +14,7 @@ function Navbar() {
 
   return (
     <nav className="flex items-center justify-center shadow-md h-24 top-0 sticky bg-white">
-      <div className="flex w-[90vw] items-center justify-between">
+      <div className="flex w-[90vw] md:w-11/12 items-center justify-between">
         <button
           type="button"
           className="bg-transparent border border-transparent text-2xl text-[#3F3D56] cursor-pointer flex items-center"

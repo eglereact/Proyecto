@@ -9,7 +9,7 @@ function SharedLayout() {
         <BigSidebar />
         <div>
           <Navbar />
-          <div className="w-11/12 md:w-[90vw] m-auto py-8">
+          <div className="md:w-11/12 w-[90vw] m-auto py-8">
             <Outlet />
           </div>
         </div>

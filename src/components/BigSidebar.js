@@ -13,7 +13,7 @@ function BigSidebar() {
             : "sidebar-container-big show-sidebar-big"
         }
       >
-        <div className="">
+        <div className="sticky top-0 left-0">
           <header className="h-24 flex items-center justify-center">
             <Logo />
           </header>
