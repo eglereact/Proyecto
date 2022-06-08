@@ -1,5 +1,5 @@
-function AddItem() {
-  return <div>Add Item</div>;
+function AddJob() {
+  return <div>Add Job</div>;
 }
 
-export default AddItem;
+export default AddJob;

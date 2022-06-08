@@ -1,7 +1,7 @@
-import AddItem from "./AddJob";
-import AllItems from "./AllItems";
+import AddJob from "./AddJob";
+import AllJobs from "./AllJobs";
 import Profile from "./Profile";
 import SharedLayout from "./SharedLayout";
 import Stats from "./Stats";
 
-export { Stats, Profile, AddItem, AllItems, SharedLayout };
+export { Stats, Profile, AddJob, AllJobs, SharedLayout };

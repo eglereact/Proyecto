@@ -13,7 +13,7 @@ function Navbar() {
   const [showLogout, setShowLogout] = useState(false);
 
   return (
-    <nav className="flex items-center justify-center shadow-md h-24 top-0 sticky bg-white">
+    <nav className="flex items-center justify-center shadow-md h-24 z-10 top-0 sticky bg-white">
       <div className="flex w-[90vw] md:w-11/12 items-center justify-between">
         <button
           type="button"

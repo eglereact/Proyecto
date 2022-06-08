@@ -9,6 +9,10 @@
 }
 
 @layer components {
+  body {
+    @apply bg-gray-100;
+  }
+
   .dropdown {
     @apply absolute top-10 left-0 w-full bg-gray-200 shadow-md p-2 text-center rounded-lg invisible;
   }
@@ -26,7 +30,7 @@
   }
 
   .show-sidebar {
-    @apply opacity-100 z-10;
+    @apply opacity-100 z-30;
   }
   .show-sidebar-big {
     @apply ml-0;

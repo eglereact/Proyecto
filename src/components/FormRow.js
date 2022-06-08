@@ -8,6 +8,7 @@ function FormRow({
   handleChange,
   icon,
   placeholder,
+  labelText,
 }) {
   return (
     <div className="w-full mt-3">
@@ -15,7 +16,7 @@ function FormRow({
         htmlFor={name}
         className="block mb-1 text-sm font-medium text-gray-800 uppercase"
       >
-        {label}
+        {labelText || label}
       </label>
       <div className="relative">
         <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none text-gray-800 text-lg">
