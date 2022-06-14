@@ -39,4 +39,12 @@
   .nav-link {
     @apply text-[#3F3D56] pl-10 hover:pl-14 ease-in-out duration-300 flex items-center capitalize text-lg  py-3 hover:text-[#A07265] hover:bg-gray-100;
   }
+
+  .title-header {
+    @apply text-4xl mx-5 mt-3 font-bold text-gray-800 capitalize;
+  }
+
+  .form-button {
+    @apply inline-flex mt-3 items-center justify-center h-10 px-6 font-medium tracking-wide capitalize text-white transition duration-200 bg-[#A07265] rounded-lg hover:bg-gray-800  focus:outline-none;
+  }
 }

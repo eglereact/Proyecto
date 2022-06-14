@@ -35,7 +35,7 @@ function Profile() {
   return (
     <section className=" mx-4">
       <form onSubmit={handleSubmit}>
-        <h1 className="text-4xl mx-5 mt-3 font-bold text-gray-800">Profile</h1>
+        <h1 className="title-header">Profile</h1>
         <div className="sm:w-2/3 m-5">
           <FormRow
             icon={<AiOutlineUser />}
@@ -71,12 +71,7 @@ function Profile() {
             value={userData.location}
             handleChange={handleChange}
           />
-          <button
-            type="submit"
-            disabled={isLoading}
-            class="inline-flex mt-3 items-center justify-center h-10 px-6 font-medium tracking-wide capitalize text-white
-             transition duration-200 bg-[#A07265] rounded-lg hover:bg-gray-800 focus:shadow-outline focus:outline-none"
-          >
+          <button type="submit" disabled={isLoading} className="form-button">
             {isLoading ? "loading..." : "save changes"}
           </button>
         </div>

@@ -48,7 +48,7 @@ function Navbar() {
           >
             <button
               type="button"
-              onClick={() => dispatch(logoutUser())}
+              onClick={() => dispatch(logoutUser("Logging Out..."))}
               className="bg-transparent border border-transparent text-gray-800 capitalize cursor-pointer"
             >
               logout
