@@ -5,6 +5,7 @@ import { GoLocation } from "react-icons/go";
 import { AiOutlineCalendar, AiOutlineLaptop } from "react-icons/ai";
 import moment from "moment";
 import JobAvatar from "./JobAvatar";
+import { deleteJob, setEditJob } from "../features/job/jobSlice";
 
 function Job({
   _id,
@@ -31,21 +32,33 @@ function Job({
           <JobInfo text={jobLocation} icon={<GoLocation />} />
           <JobInfo text={date} icon={<AiOutlineCalendar />} />
           <JobInfo text={jobType} icon={<AiOutlineLaptop />} />
-          <div className={`status ${status}`}>{status}</div>
+          <div className="status">{status}</div>
         </div>
         <footer>
           <div className="space-x-2">
             <Link
               className="form-button"
               to="/add-job"
-              onClick={() => console.log("Edit the job")}
+              onClick={() =>
+                dispatch(
+                  setEditJob({
+                    editJobId: _id,
+                    position,
+                    company,
+                    jobLocation,
+                    jobType,
+                    createdAt,
+                    status,
+                  })
+                )
+              }
             >
               Edit
             </Link>
             <button
               className="form-button"
               type="button"
-              onClick={() => console.log("Delete")}
+              onClick={() => dispatch(deleteJob(_id))}
             >
               Delete
             </button>
