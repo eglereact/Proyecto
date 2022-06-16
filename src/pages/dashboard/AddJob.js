@@ -8,7 +8,7 @@ import {
   clearValues,
   createJob,
   handleChange,
-} from "../../features/user/jobSlice";
+} from "../../features/job/jobSlice";
 import { useEffect } from "react";
 
 function AddJob() {
@@ -90,7 +90,7 @@ function AddJob() {
             icon={<GrStatusPlaceholder />}
           />
           <FormRowSelect
-            name={jobType}
+            name="jobType"
             label="Job Type"
             value={jobType}
             handdleChange={handleJobInput}

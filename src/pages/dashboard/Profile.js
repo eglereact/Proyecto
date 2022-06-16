@@ -33,10 +33,10 @@ function Profile() {
   };
 
   return (
-    <section className=" mx-4">
+    <section>
       <form onSubmit={handleSubmit}>
         <h1 className="title-header">Profile</h1>
-        <div className="sm:w-2/3 m-5">
+        <div className="sm:w-2/3 mx-5">
           <FormRow
             icon={<AiOutlineUser />}
             type="text"

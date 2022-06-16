@@ -45,6 +45,26 @@
   }
 
   .form-button {
-    @apply inline-flex mt-3 items-center justify-center h-10 px-6 font-medium tracking-wide capitalize text-white transition duration-200 bg-[#A07265] rounded-lg hover:bg-gray-800  focus:outline-none;
+    @apply inline-flex mt-3 items-center justify-center h-8 px-6 font-medium tracking-wide capitalize text-white transition duration-200 bg-[#A07265] rounded-lg hover:bg-gray-800  focus:outline-none;
   }
+
+  .job-avatar {
+    @apply w-10 h-10 bg-[#3F3D56] m-2 text-white flex items-center text-xl justify-center rounded-md;
+  }
+
+  .status {
+    @apply my-2 w-28 text-center rounded-md font-bold text-sm uppercase text-[#3F3D56] bg-gray-200;
+  }
+
+  /* .pending {
+    @apply bg-yellow-200 text-yellow-500 border border-yellow-500;
+  }
+
+  .declined {
+    @apply bg-red-200 text-red-400 border border-red-400;
+  }
+
+  .interview {
+    @apply bg-blue-200 text-blue-400 border border-blue-400;
+  } */
 }
