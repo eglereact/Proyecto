@@ -92,21 +92,42 @@ function Register() {
           placeholder="********"
           value={values.password}
         />
-        <button
-          type="submit"
-          className="relative inline-block px-6 py-3 font-bold text-[#2F2E41] group mt-8"
-          disabled={isLoading}
-        >
-          <span
-            className="absolute inset-0 w-full h-full transition duration-300 ease-out transform -translate-x-2 -translate-y-2
+        <div className="flex flex-col sm:flex-row sm:space-x-8 mt-8">
+          <button
+            type="submit"
+            className="relative inline-block w-32 py-3 font-bold text-[#2F2E41] group mb-5 sm:mb-0"
+            disabled={isLoading}
+          >
+            <span
+              className="absolute inset-0 w-full h-full transition duration-300 ease-out transform -translate-x-2 -translate-y-2
              bg-[#A07265] group-hover:translate-x-0 group-hover:translate-y-0"
-          ></span>
-          <span className="absolute inset-0 w-full h-full border-4 border-[#2F2E41]"></span>
-          <span className="relative">
-            {isLoading ? "Loading..." : "Submit"}
-          </span>
-        </button>
-        <p className="text-gray-800 mt-5">
+            ></span>
+            <span className="absolute inset-0 w-full h-full border-4 border-[#2F2E41]"></span>
+            <span className="relative">
+              {isLoading ? "Loading..." : "Submit"}
+            </span>
+          </button>
+          <button
+            type="button"
+            className="relative inline-block w-32 py-3 font-bold text-[#2F2E41] group"
+            disabled={isLoading}
+            onClick={() =>
+              dispatch(
+                loginUser({ email: "testUser@test.com", password: "secret" })
+              )
+            }
+          >
+            <span
+              className="absolute inset-0 w-full h-full transition duration-300 ease-out transform -translate-x-2 -translate-y-2
+            bg-[#A07265] group-hover:translate-x-0 group-hover:translate-y-0"
+            ></span>
+            <span className="absolute inset-0 w-full h-full border-4 border-[#2F2E41]"></span>
+            <span className="relative">
+              {isLoading ? "Loading..." : "Demo App"}
+            </span>
+          </button>
+        </div>
+        <p className="text-gray-800 mt-5 text-center">
           {values.isMember ? "Not a member yet? " : "Already a member? "}
 
           <button
