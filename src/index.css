@@ -55,4 +55,16 @@
   .status {
     @apply my-2 w-28 text-center rounded-md font-bold text-sm uppercase text-[#3F3D56] bg-gray-200;
   }
+
+  .red {
+    @apply text-red-500;
+  }
+
+  .brown {
+    @apply text-[#A07265];
+  }
+
+  .blue {
+    @apply text-[#3F3D56];
+  }
 }
