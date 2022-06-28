@@ -95,7 +95,7 @@ function AddJob() {
             list={statusOptions}
             label="status"
             name="status"
-            handdleChange={handleJobInput}
+            handleChange={handleJobInput}
             value={status}
             icon={<GrStatusPlaceholder />}
           />
@@ -103,7 +103,7 @@ function AddJob() {
             name="jobType"
             label="Job Type"
             value={jobType}
-            handdleChange={handleJobInput}
+            handleChange={handleJobInput}
             list={jobTypeOptions}
             icon={<GoBook />}
           />

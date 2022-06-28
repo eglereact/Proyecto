@@ -1,4 +1,4 @@
-function FormRowSelect({ label, name, value, list, handdleChange, icon }) {
+function FormRowSelect({ label, name, value, list, handleChange, icon }) {
   return (
     <div className="w-full mt-3">
       <label
@@ -15,7 +15,7 @@ function FormRowSelect({ label, name, value, list, handdleChange, icon }) {
           name={name}
           id={name}
           value={value}
-          onChange={handdleChange}
+          onChange={handleChange}
           className="bg-gray-50 border border-gray-300 text-gray-600 text-sm rounded-lg capitalize w-full outline-none pl-10 p-2.5"
         >
           {list.map((itemValue, index) => (
