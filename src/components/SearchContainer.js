@@ -12,6 +12,7 @@ function SearchContainer() {
   const dispach = useDispatch();
 
   const handleSearch = (e) => {
+    if (isLoading) return;
     dispach(handleChange({ name: e.target.name, value: e.target.value }));
   };
   const handleSubmit = (e) => {

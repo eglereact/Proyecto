@@ -6,14 +6,22 @@ import { getAllJobs } from "../features/allJobs/allJobsSlice";
 import PageBtnContainer from "./PageBtnContainer";
 
 function JobsContainer() {
-  const { jobs, isLoading, page, totalJobs, numOfPages } = useSelector(
-    (store) => store.allJobs
-  );
+  const {
+    jobs,
+    isLoading,
+    page,
+    totalJobs,
+    numOfPages,
+    search,
+    searchStatus,
+    searchType,
+    sort,
+  } = useSelector((store) => store.allJobs);
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(getAllJobs());
-  }, []);
+  }, [page, search, searchStatus, searchType, sort]);
 
   if (isLoading) {
     return (
@@ -26,7 +34,9 @@ function JobsContainer() {
   if (jobs.length === 0) {
     return (
       <div>
-        <h2>No jobs to display...</h2>
+        <h2 className="ml-5 mt-5 text-2xl text-[#3F3D56]">
+          No jobs to display...
+        </h2>
       </div>
     );
   }

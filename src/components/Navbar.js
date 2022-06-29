@@ -5,7 +5,7 @@ import {
   AiFillCaretDown,
 } from "react-icons/ai";
 import Logo from "./Logo";
-import { toggleSidebar, logoutUser } from "../features/user/userSlice";
+import { toggleSidebar, clearStore } from "../features/user/userSlice";
 import { useState } from "react";
 function Navbar() {
   const { user } = useSelector((store) => store.user);
@@ -48,7 +48,7 @@ function Navbar() {
           >
             <button
               type="button"
-              onClick={() => dispatch(logoutUser("Logging Out..."))}
+              onClick={() => dispatch(clearStore("Logging Out..."))}
               className="bg-transparent border border-transparent text-gray-800 capitalize cursor-pointer"
             >
               logout
